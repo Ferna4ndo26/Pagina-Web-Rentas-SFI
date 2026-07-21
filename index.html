@@ -12,7 +12,10 @@
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="brand">
-        <div class="brand-logo-chip">SFI</div>
+        <div class="brand-logo-chip">
+          <img src="logo.png" alt="SFI Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <span style="display:none; font-weight:bold; color:#12161d;">SFI</span>
+        </div>
         <div>
           <span>Sistemas de Fuerza Industrial</span>
           <span class="brand-tagline">Energía siempre disponible</span>
@@ -36,7 +39,7 @@
     <div class="hero-inner">
       <div class="hero-lema">Energía siempre disponible</div>
       <h1>Renta de equipo industrial en <em>Nuevo León</em></h1>
-      <p class="lead">Generadores, compresores Kaeser y torres de iluminación disponibles para renta inmediata. Flota propia, entrega en obra y soporte técnico.</p>
+      <p class="lead">Generadores, compresores Kaeser y torres de iluminación. Flota propia, entrega en obra y soporte técnico cuando lo necesites.</p>
       <div class="hero-actions">
         <a href="#cotizacion" class="btn btn-primary">Solicitar cotización</a>
         <a href="#equipos" class="btn btn-outline-light">Ver equipos disponibles</a>
@@ -44,16 +47,16 @@
     </div>
   </section>
 
-  <!-- Sección Catálogo / Inventario -->
+  <!-- Sección Catálogo / Inventario Completo -->
   <section id="equipos" class="section">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">Inventario en tiempo real</div>
-        <h2>Equipos disponibles para renta</h2>
-        <p>Filtra por tipo o busca por capacidad/marca. Fichas con especificaciones reales en patio.</p>
+        <h2>Flota de Equipos Industriales</h2>
+        <p>Filtra por tipo de equipo o estatus comercial. Presiona "Más Información" para ver fichas técnicas completas.</p>
       </div>
 
-      <!-- Barra de Filtros -->
+      <!-- Barra de Filtros y Búsqueda -->
       <div class="catalog-toolbar">
         <div class="tb-group">
           <button type="button" class="tb-chip active" data-filter="Todos">Todos</button>
@@ -61,10 +64,10 @@
           <button type="button" class="tb-chip" data-filter="Compresor">Compresores</button>
           <button type="button" class="tb-chip" data-filter="Torre de Iluminación">Torres de luz</button>
         </div>
-        <input type="text" id="catalog-search" class="tb-search" placeholder="Buscar por marca, KW, CFM...">
+        <input type="text" id="catalog-search" class="tb-search" placeholder="Buscar por marca, KW, CFM, económico...">
       </div>
 
-      <div id="tb-count" class="tb-count">Cargando unidades...</div>
+      <div id="tb-count" class="tb-count">Cargando unidades de levantamiento...</div>
       <div id="equip-grid" class="equip-grid"></div>
     </div>
   </section>
@@ -75,7 +78,7 @@
       <div class="section-head">
         <div class="eyebrow">Cotización inmediata</div>
         <h2>Solicita tu equipo hoy</h2>
-        <p>Envía la información por WhatsApp o correo sin procesos complejos.</p>
+        <p>Cuéntanos qué necesitas y te respondemos el mismo día sin registros ni esperas.</p>
       </div>
 
       <div class="form-card" style="color: var(--graphite-900);">
@@ -94,7 +97,7 @@
           <div class="form-row">
             <div class="field">
               <label for="cot-telefono">Teléfono / WhatsApp <span class="req">*</span></label>
-              <input type="tel" id="cot-telefono" required placeholder="Ej. 8112345678">
+              <input type="tel" id="cot-telefono" required placeholder="Ej. 8115712636">
             </div>
             <div class="field">
               <label for="cot-tipo">Tipo de equipo <span class="req">*</span></label>
@@ -120,26 +123,60 @@
           </div>
 
           <div class="field field-full" style="margin-bottom:18px;">
-            <div class="field">
-              <label for="cot-ubicacion">Ubicación del proyecto</label>
-              <input type="text" id="cot-ubicacion" placeholder="Municipio / Ciudad">
-            </div>
+            <label for="cot-ubicacion">Ubicación del proyecto</label>
+            <input type="text" id="cot-ubicacion" placeholder="Municipio / Ciudad">
           </div>
 
           <div class="field field-full" style="margin-bottom:18px;">
             <label for="cot-detalles">Detalles adicionales</label>
-            <textarea id="cot-detalles" placeholder="Escribe aquí especificaciones de tu proyecto..."></textarea>
+            <textarea id="cot-detalles" placeholder="Escribe aquí especificaciones o requerimientos especiales..."></textarea>
           </div>
 
           <div class="form-actions">
-            <button type="submit" class="btn btn-wa btn-block">Enviar por WhatsApp</button>
+            <button type="submit" class="btn btn-wa btn-block">Enviar solicitud por WhatsApp</button>
           </div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Modal Overlay para Ficha Técnica -->
+  <!-- Sección de Contacto -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Atención Directa</div>
+        <h2>Contacto y Ubicación</h2>
+        <p>Habla directo con el departamento de rentas o visítanos en nuestra bodega en Apodaca.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="contact-card">
+            <h4>Teléfono y WhatsApp</h4>
+            <p><a href="tel:8115712636" style="color:var(--power-blue); font-weight:bold; font-size:18px;">81 1571 2636</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>Correo Electrónico</h4>
+            <p><a href="mailto:soporte.rentas01@sfindustrial.mx" style="color:var(--power-blue); font-size:16px;">soporte.rentas01@sfindustrial.mx</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>Dirección de Bodega</h4>
+            <p><strong>Sistemas de Fuerza Industrial S.A. de C.V.</strong><br>
+            Nazry Hasbún Hasbún 102, Bodega 2<br>
+            66600 Cd. Apodaca, N.L., México</p>
+          </div>
+        </div>
+        
+        <div class="contact-card" style="display:flex; flex-direction:column; justify-content:center; background:var(--graphite-900); color:white;">
+          <h3 style="color:var(--white);">¿Listo para rentar?</h3>
+          <p style="color:var(--steel-300);">Atención directa sin intermediarios. Coordinamos traslados en remolque o grúa según el volumen de tu proyecto.</p>
+          <a href="https://wa.me/528115712636" target="_blank" class="btn btn-wa" style="margin-top:15px;">Escribir por WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overlay Modal para Ficha Técnica -->
   <div id="ficha-overlay" class="ficha-overlay" onclick="if(event.target === this) closeFicha()">
     <div class="ficha-modal">
       <div class="ficha-modal-head">
@@ -152,11 +189,36 @@
     </div>
   </div>
 
+  <!-- Footer con Logo -->
   <footer class="site-footer">
     <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo-chip" style="display:inline-block; margin-bottom:12px; padding:6px 10px;">
+            <img src="logo.png" alt="SFI Logo" style="height:38px;" onerror="this.style.display='none';">
+          </div>
+          <p>Renta de generadores, compresores Kaeser y torres de iluminación en Nuevo León.</p>
+        </div>
+        <div>
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#equipos">Equipos disponibles</a></li>
+            <li><a href="#cotizacion">Cotización</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Contacto</h5>
+          <ul>
+            <li>Tel / WA: 81 1571 2636</li>
+            <li>soporte.rentas01@sfindustrial.mx</li>
+            <li>Cd. Apodaca, N.L.</li>
+          </ul>
+        </div>
+      </div>
       <div class="footer-bottom">
         <div>© 2026 Sistemas de Fuerza Industrial S.A. de C.V.</div>
-        <div>Disponibilidad de inventario actualizada al día de hoy.</div>
+        <div>Disponibilidad de inventario integrada desde levantamiento oficial.</div>
       </div>
     </div>
   </footer>
