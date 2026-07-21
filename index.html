@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistemas de Fuerza Industrial — Renta de Equipo Industrial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Navegación -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <div class="brand-logo-chip">SFI</div>
+        <div>
+          <span>Sistemas de Fuerza Industrial</span>
+          <span class="brand-tagline">Energía siempre disponible</span>
+        </div>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">☰</button>
+      <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="#equipos">Equipos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#cotizacion">Cotización</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#cotizacion" class="nav-cta">Solicitar renta</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-inner">
+      <div class="hero-lema">Energía siempre disponible</div>
+      <h1>Renta de equipo industrial en <em>Nuevo León</em></h1>
+      <p class="lead">Generadores, compresores Kaeser y torres de iluminación disponibles para renta inmediata. Flota propia, entrega en obra y soporte técnico.</p>
+      <div class="hero-actions">
+        <a href="#cotizacion" class="btn btn-primary">Solicitar cotización</a>
+        <a href="#equipos" class="btn btn-outline-light">Ver equipos disponibles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Catálogo / Inventario -->
+  <section id="equipos" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Inventario en tiempo real</div>
+        <h2>Equipos disponibles para renta</h2>
+        <p>Filtra por tipo o busca por capacidad/marca. Fichas con especificaciones reales en patio.</p>
+      </div>
+
+      <!-- Barra de Filtros -->
+      <div class="catalog-toolbar">
+        <div class="tb-group">
+          <button type="button" class="tb-chip active" data-filter="Todos">Todos</button>
+          <button type="button" class="tb-chip" data-filter="Generador">Generadores</button>
+          <button type="button" class="tb-chip" data-filter="Compresor">Compresores</button>
+          <button type="button" class="tb-chip" data-filter="Torre de Iluminación">Torres de luz</button>
+        </div>
+        <input type="text" id="catalog-search" class="tb-search" placeholder="Buscar por marca, KW, CFM...">
+      </div>
+
+      <div id="tb-count" class="tb-count">Cargando unidades...</div>
+      <div id="equip-grid" class="equip-grid"></div>
+    </div>
+  </section>
+
+  <!-- Formulario de Cotización -->
+  <section id="cotizacion" class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Cotización inmediata</div>
+        <h2>Solicita tu equipo hoy</h2>
+        <p>Envía la información por WhatsApp o correo sin procesos complejos.</p>
+      </div>
+
+      <div class="form-card" style="color: var(--graphite-900);">
+        <form onsubmit="enviarWhatsApp(event)">
+          <div class="form-row">
+            <div class="field">
+              <label for="cot-nombre">Nombre completo <span class="req">*</span></label>
+              <input type="text" id="cot-nombre" required placeholder="Ej. Juan Pérez">
+            </div>
+            <div class="field">
+              <label for="cot-empresa">Empresa</label>
+              <input type="text" id="cot-empresa" placeholder="Nombre de tu empresa">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="cot-telefono">Teléfono / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="cot-telefono" required placeholder="Ej. 8112345678">
+            </div>
+            <div class="field">
+              <label for="cot-tipo">Tipo de equipo <span class="req">*</span></label>
+              <select id="cot-tipo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Generador">Generador</option>
+                <option value="Compresor">Compresor Kaeser</option>
+                <option value="Torre de Iluminación">Torre de iluminación</option>
+                <option value="Asesoría">No estoy seguro / Necesito asesoría</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="cot-capacidad">Capacidad aproximada</label>
+              <input type="text" id="cot-capacidad" placeholder="Ej. 100 KW, 185 CFM">
+            </div>
+            <div class="field">
+              <label for="cot-duracion">Duración estimada</label>
+              <input type="text" id="cot-duracion" placeholder="Ej. 1 semana, 3 meses">
+            </div>
+          </div>
+
+          <div class="field field-full" style="margin-bottom:18px;">
+            <div class="field">
+              <label for="cot-ubicacion">Ubicación del proyecto</label>
+              <input type="text" id="cot-ubicacion" placeholder="Municipio / Ciudad">
+            </div>
+          </div>
+
+          <div class="field field-full" style="margin-bottom:18px;">
+            <label for="cot-detalles">Detalles adicionales</label>
+            <textarea id="cot-detalles" placeholder="Escribe aquí especificaciones de tu proyecto..."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-wa btn-block">Enviar por WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Overlay para Ficha Técnica -->
+  <div id="ficha-overlay" class="ficha-overlay" onclick="if(event.target === this) closeFicha()">
+    <div class="ficha-modal">
+      <div class="ficha-modal-head">
+        <button type="button" class="ficha-close" onclick="closeFicha()">✕</button>
+        <div id="ficha-tipo" class="ficha-tipo">CATEGORÍA</div>
+        <h3 id="ficha-titulo">MARCA / EQUIPO</h3>
+        <div id="ficha-modelo-txt" class="ficha-modelo">MODELO</div>
+      </div>
+      <div id="ficha-body" class="ficha-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Sistemas de Fuerza Industrial S.A. de C.V.</div>
+        <div>Disponibilidad de inventario actualizada al día de hoy.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="sfi.js"></script>
+</body>
+</html>
